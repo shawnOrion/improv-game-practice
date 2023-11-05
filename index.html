@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Chat UI</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <button id="create-bot-btn">Create Bot</button>
+    </nav>
+    <div id="container">
+      <div id="sidebar">
+        <button id="toggle-sidebar-btn">Toggle Sidebar</button>
+        <div id="bot-list">
+          <div class="bot-item">Dummy Bot 1</div>
+          <div class="bot-item">Dummy Bot 2</div>
+          <!-- Add more dummy bots as needed -->
+        </div>
+        <button id="user-profile-btn">Username</button>
+      </div>
+      <div id="chat-area">
+        <div id="chat-window">
+          <!-- Add more dummy messages as needed -->
+        </div>
+        <div id="user-input">
+          <textarea
+            placeholder="Type your message here..."
+            id="user-message-txt"
+          ></textarea>
+          <button id="send-message-btn">Send</button>
+        </div>
+      </div>
+      <form class="custom-form hidden" id="create-bot-form">
+        <h3>Bot Creation</h3>
+        <div class="bot-type-toggle">
+          <label for="bot-type">Bot Type:</label>
+          <input type="radio" name="bot-type" value="crazy" required />
+          <span>Crazy</span>
+
+          <input type="radio" name="bot-type" value="straight" required />
+          <span>Straight</span>
+        </div>
+        <!-- <label for="bot-name-txt">Bot Name:</label>
+        <input type="text" id="bot-name-txt" name="botName" required /> -->
+        <label for="bot-who-txt">Who:</label>
+        <input
+          type="text"
+          id="bot-who-txt"
+          name="botWho"
+          placeholder="Character or Role"
+        />
+        <label for="bot-what-txt">What:</label>
+        <input
+          type="text"
+          id="bot-what-txt"
+          name="botWhat"
+          placeholder="Situation or Activity"
+        />
+        <label for="bot-where-txt">Where:</label>
+        <input
+          type="text"
+          id="bot-where-txt"
+          name="botWhere"
+          placeholder="Location"
+        />
+
+        <button type="submit" id="create-bot-btn">Create Bot</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
