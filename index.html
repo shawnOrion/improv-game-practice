@@ -3,22 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/a541b204e2.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="style.css" />
+
     <title>Chat UI</title>
   </head>
   <body>
     <nav id="navbar">
+      <button id="toggle-sidebar-btn">Toggle Sidebar</button>
+
       <button id="create-bot-btn">Create Bot</button>
     </nav>
     <div id="container">
-      <div id="sidebar">
-        <button id="toggle-sidebar-btn">Toggle Sidebar</button>
-        <div id="bot-list">
-          <div class="bot-item">Dummy Bot 1</div>
-          <div class="bot-item">Dummy Bot 2</div>
-          <!-- Add more dummy bots as needed -->
-        </div>
-        <button id="user-profile-btn">Username</button>
+      <div class="sidebar">
+        <h2>Bot List</h2>
+        <div id="bot-list"></div>
       </div>
       <div id="chat-area">
         <div id="chat-window">
@@ -29,9 +31,17 @@
             placeholder="Type your message here..."
             id="user-message-txt"
           ></textarea>
-          <button id="send-message-btn">Send</button>
+          <div class="btn-stack">
+            <button id="recordButton">
+              <i class="startRecord fa-solid fa-microphone"></i>
+              <i class="transcribing fa-solid fa-arrows-rotate hidden"></i>
+              <i class="stopRecord fa-regular fa-square hidden"></i>
+            </button>
+            <button id="send-message-btn">Send</button>
+          </div>
         </div>
       </div>
+
       <form class="custom-form hidden" id="create-bot-form">
         <h3>Bot Creation</h3>
         <div class="bot-type-toggle">
@@ -42,8 +52,8 @@
           <input type="radio" name="bot-type" value="straight" required />
           <span>Straight</span>
         </div>
-        <!-- <label for="bot-name-txt">Bot Name:</label>
-        <input type="text" id="bot-name-txt" name="botName" required /> -->
+        <label for="bot-name-txt">Scene Name:</label>
+        <input type="text" id="bot-name-txt" name="botName" required />
         <label for="bot-who-txt">Who:</label>
         <input
           type="text"
@@ -56,7 +66,7 @@
           type="text"
           id="bot-what-txt"
           name="botWhat"
-          placeholder="Situation or Activity"
+          placeholder="Emotion or Activity"
         />
         <label for="bot-where-txt">Where:</label>
         <input
