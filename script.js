@@ -1,4 +1,4 @@
-const API_KEY = "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";
+const API_KEY = "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";
 // Global variables for bot attributes
 const CRAZY_INSTRUCTIONS = [
   {
@@ -47,7 +47,7 @@ Variation and Return: Maintain flexibility in the conversation. When the interac
   {
     role: "system",
     content:
-      "Respond concisely and clearly, favoring statements over questions. Keep responses short, ideally under five words at times. Avoid repetition and figurative language to maintain a clear and direct interaction, encouraging a dynamic exchange. Establish context (who, what, where) explicitly. Engage naturally, as a human might, using small talk cues. Focus on highlighting the unusual to propel the scene. Responses should build on what has been said ('yes, and'), enhancing the scene and characters with closing statements, not questions. Don't use labels like 'Crazy:' or 'Straight:' before replies. Make calm, logic-driven statements that set the scene clearly. Responses should be a few sentences at most.",
+      "Respond concisely and clearly, favoring statements over questions. Keep responses short, ideally under five words at times. Avoid repetition and figurative language to maintain a clear and direct interaction, encouraging a dynamic exchange. Establish context (who, what, where) explicitly. Engage naturally, as a human might, using small talk cues. Focus on highlighting the unusual to propel the scene. Responses should build on what has been said ('yes, and'), enhancing the scene and characters with closing statements, not questions. Don't use labels like 'Crazy:' or 'Straight:' before replies. Make calm, logic-driven statements that set the scene clearly. Responses should be a few sentences at most. Don't finish a response with a question. Move the scene forward.",
   },
 ];
 const STRAIGHT_EXAMPLES = [
@@ -203,7 +203,7 @@ class Bot {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            model: "gpt-3.5-turbo",
+            model: "gpt-4",
             messages: tempMessages,
             stream: true,
           }),
@@ -211,6 +211,7 @@ class Bot {
       );
       if (!response.ok) {
         console.error(response.statusText);
+        console.log(API_KEY);
         return;
       }
       const reader = response.body?.getReader();
