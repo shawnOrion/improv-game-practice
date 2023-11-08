@@ -1,4 +1,4 @@
-const API_KEY = "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";
+const API_KEY = "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";
 // Global variables for bot attributes
 const CRAZY_INSTRUCTIONS = [
   {
